@@ -24,11 +24,12 @@ export class ConversionService {
       },
       body: JSON.stringify(dto),
     });
-
-    if (!response.ok) {
-      throw new Error('Error al realizar la conversión');
+  
+    if (!response.ok) { 
+      const errorText = await response.text(); 
+      throw new Error(errorText || 'Error desconocido');
     }
-
+  
     return await response.json();
   }
 

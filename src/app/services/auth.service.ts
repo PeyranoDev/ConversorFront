@@ -16,7 +16,7 @@ export class AuthService {
 
 
   login(loginData: { username: string, password: string }) {
-    return fetch("https://localhost:7190/api/authentication/Authenticate", {
+    return fetch("https://localhost:7190/api/Authenticate", {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(loginData)
@@ -27,6 +27,24 @@ export class AuthService {
           this.fetchUserDetails(token); 
         }
       });
+  }
+
+  register(registerData: { username: string; password: string; email: string; secondPassword: string; subscriptionId: number })
+  : Promise<{ success: boolean; message: string }> {
+    return fetch("https://localhost:7190/user", {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(registerData),
+    })
+      .then(async res => {
+        if (res.status == 204) {
+          return { success: true, message: "Usuario creado exitosamente" };
+        } else {
+          const errorMessage = await res.text();
+          return { success: false, message: errorMessage || `Error ${res.status}` };
+        }
+      })
+      .catch(() => ({ success: false, message: "Error de red o conexión con el servidor." }));
   }
 
 

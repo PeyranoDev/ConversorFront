@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ConversionService } from '../../../services/conversion.service';
 import { ConversionResult } from '../../../interfaces/conversion-result';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-converter',
@@ -44,12 +45,21 @@ export class ConverterComponent {
           this.amount
         );
         this.result = conversionResult.convertedAmount;
-      } catch (error) {
-        console.error('Error al realizar la conversión', error);
+      } catch (error: any) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error en la conversión',
+          text: error.message || 'Ha ocurrido un error al realizar la conversión.',
+          timer: 5000,
+        });
       }
     } else {
-      console.warn('Por favor complete todos los campos');
+      Swal.fire({
+        icon: 'warning',
+        title: 'Campos incompletos',
+        text: 'Por favor, complete todos los campos antes de realizar la conversión.',
+        timer: 3000,
+      });
     }
   }
 }
-
