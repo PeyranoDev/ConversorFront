@@ -1,0 +1,31 @@
+<main class="flex-column-center">
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Username</th>
+                    <th>Subscripcion</th>
+                    <th>Cantidad de Conversiones</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (usuario of usuarios; track $index) {
+                    <tr>
+                        <td>{{ usuario.id }}</td>
+                        <td>{{ usuario.username }}</td>
+                        <td>{{ usuario.subscriptionId }}</td>
+                        <td>{{ usuario.conversionsUsed }}</td>
+                        <td class="acciones-container">
+                          <button class="btn">
+                            <img src="assets/images/x.png" alt="Deshabilitar Usuario" />
+                          </button>
+                          <button (click)="openChangeSubscriptionModal(usuario)" class="btn">
+                            <img src="assets/images/change.png" alt="Cambiar subscripción" />
+                          </button>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>

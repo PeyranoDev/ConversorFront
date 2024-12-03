@@ -1,0 +1,65 @@
+<main>
+  <nav class="navbar">
+    <div class="container">
+      <a [routerLink]="['/']" routerLinkActive="nav-link-active" class="logo">
+        CurrencyEX
+      </a>
+      <a [routerLink]="['/login']" routerLinkActive="nav-link-active" class="cta-btn">
+        ¿Ya tienes cuenta?
+      </a>
+    </div>
+</nav>
+<section class="hero">
+  <div class="container">
+    <div class="left-container">
+      <h1>
+        Convierte Monedas de forma <br> <span>PRECISA y RAPIDA</span>
+      </h1>
+      <p>
+        Nuestra herramienta de conversión de divisas te ofrece los datos <br> más actuales para tomar decisiones financieras inteligentes.
+      </p>
+      <div class="button-container">
+        <a [routerLink]="['/register']" routerLinkActive="nav-link-active" class="cta-btn">
+          Empieza a Convertir
+        </a>
+      </div>
+    </div>
+
+    <div class="right-container">
+      <iframe class="w-[300px] h-[300px] md:w-[400px] md:h-[400px]" src="https://lottie.host/embed/ea4a896f-77b9-4dfc-b461-8d5b68a80a27/jHOeIOYiZ9.json"></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="features animate-fade-in-up">
+  <div class="container">
+    <h2>Características clave de CurrencyEx:</h2>
+    <div class="grid">
+      <div class="feature">
+        <img src="assets/images/update.png" alt="Actualización en tiempo real">
+        <h3>Actualización en Tiempo Real</h3>
+        <p>
+          Obtén los valores más recientes de las divisas para realizar conversiones precisas y actualizadas.
+        </p>
+      </div>
+
+      <div class="feature">
+        <img src="assets/images/friendly.png" class="prueba" alt="Facilidad de uso">
+        <h3>Facilidad de Uso</h3>
+        <p>
+          Diseñado para que cualquier usuario pueda realizar conversiones de manera rápida y sencilla.
+        </p>
+      </div>
+
+      <div class="feature">
+        <img src="assets/images/secure.png" alt="Seguridad en tus transacciones">
+        <h3>Seguridad</h3>
+        <p>
+          Utilizamos protocolos de seguridad avanzados para proteger tus datos y mantener tus conversiones seguras.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>

@@ -1,0 +1,11 @@
+<div class="profile-container">
+    <h2>Mi Perfil</h2>
+  
+    <div class="profile-info">
+      <p><strong>Nombre de usuario:</strong> {{ currentUser?.username }}</p>
+      <p><strong>Email:</strong> {{ currentUser?.email }}</p>
+      <p><strong>Suscripción actual:</strong> @if (currentUser?.subscriptionId == 1 ) { Free } @else if (currentUser?.subscriptionId == 2) { Trial} @else { Pro}</p>
+  
+      <button (click)="openChangeSubscriptionModal()" class="btn-change-subscription">Cambiar suscripción</button>
+    </div>
+  </div>

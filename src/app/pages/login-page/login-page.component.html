@@ -1,0 +1,33 @@
+<div class="login-page">
+    <div class="image-section">
+      a<img src="assets/images/exchange.png" alt="Currency Exchange Illustration">
+    </div>
+  
+    <div class="form-section">
+      <div class="logo-section">
+        <img src="logoex.ico" alt="Your Company">
+        <h2>Inicia sesion en tu cuenta!</h2>
+      </div>
+      <form #loginForm="ngForm" (ngSubmit)="login(loginForm)" class="login-form">
+        <div class="form-group">
+          <label for="username">Usuario</label>
+          <input type="text" id="username" placeholder="Nombre de usuario" name="username" class="login-input" ngModel required>
+        </div>
+  
+        <div class="form-group">
+          <div class="form-group-header">
+            <label for="password">Contraseña</label>
+          </div>
+          <input type="password" id="password" placeholder="Contraseña" name="password" class="login-input" ngModel required>
+        </div>
+  
+        <div class="form-group">
+          <button [disabled]="loginForm.invalid" type="submit" class="cta-btn">Iniciar Sesion</button>
+        </div>
+      </form>
+      <p class="signup-prompt">
+        No eres miembro? <a [routerLink]="['/register']" routerLinkActive="nav-link-active" class="signup-link">Inicia una prueba gratis de 14 dias!</a>
+      </p>
+    </div>
+  </div>
+  

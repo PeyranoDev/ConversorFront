@@ -1,0 +1,20 @@
+<table>
+    <thead>
+      <tr>
+        <th>Fecha</th>
+        <th>Moneda de origen</th>
+        <th>Moneda de destino</th>
+        <th>Cantidad inicial</th>
+        <th>Cantidad convertida</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let conversion of conversionHistory">
+        <td>{{ conversion.dateTime | date:'short' }}</td>
+        <td>{{ conversion.initialCurrency.legend }} ({{ conversion.initialCurrency.code }})</td>
+        <td>{{ conversion.finalCurrency.legend }} ({{ conversion.finalCurrency.code }})</td>
+        <td>{{ conversion.initialAmount }}</td>
+        <td>{{ conversion.convertedAmount }}</td>
+      </tr>
+    </tbody>
+  </table>

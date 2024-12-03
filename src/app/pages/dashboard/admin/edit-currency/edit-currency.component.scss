@@ -1,0 +1,69 @@
+.flex-column-center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+
+.table-container {
+    overflow-x: auto;
+    box-shadow: 3px 4px 6px rgba(0, 0, 0, 0.678);
+    padding: 1rem;
+    width: 80%;
+  }
+  
+  table {
+    width: 100%;
+    text-align: left;
+    color: #cddaf1;
+  
+    thead {
+        background-color: #1c6842;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        color: #dfe2e6;
+  
+        th {
+            padding: 0.75rem;
+            border-bottom: 2px solid #4b5563;
+        }
+    }
+  
+    tbody {
+        tr {
+            background-color: #3e7957;
+            border-bottom: 1px solid #374151;
+  
+            &:last-child {
+                border-bottom: none;
+            }
+  
+            td {
+                padding: 1.20rem;
+                font-size: 0.875rem;
+            }
+          }
+    }
+  }
+
+  .acciones-container {
+    display: flex;
+    gap: 0.5rem;
+
+    button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 5rem;
+        height: 2.5rem;
+        border-radius: 4px;
+        cursor: pointer;
+
+        img {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+    }
+    .btn {
+        background-color: #ffffff; 
+    }
+}

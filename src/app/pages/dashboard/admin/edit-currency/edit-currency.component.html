@@ -1,0 +1,28 @@
+<main class="flex-column-center">
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Codigo</th>
+                    <th>Leyenda</th>
+                    <th>IC</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (currency of currencies; track $index) {
+                    <tr>
+                        <td>{{ currency.id }}</td>
+                        <td>{{ currency.code }}</td>
+                        <td>{{ currency.legend }}</td>
+                        <td> {{currency.convertibilityIndex}} </td>
+                        <td class="acciones-container">
+                          <button class="btn" (click)="openEditModal(currency)">
+                            <img src="assets/images/update.png" alt="Deshabilitar Usuario" />
+                          </button>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
